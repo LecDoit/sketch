@@ -32,7 +32,26 @@ let btn = document.getElementById('btn')
 
 
 btn.addEventListener('click',function(event){
-    var x = prompt("Please provide number of Rows");
-    var y = prompt("Please provide number of Columns");
-    makeGrid(x,y)
+    let  initrow = document.querySelectorAll('.rowie')
+
+    let box = document.getElementById('div');
+    console.log(box)
+
+    if (box.childNodes.length === 0){
+        console.log('element is empty')
+        var x = prompt("Please provide number of Rows");
+        var y = prompt("Please provide number of Columns");
+        makeGrid(x,y)
+    }else{
+        console.log('element is not empty')
+        box.innerHTML = '';
+        var x = prompt("Please provide number of Rows");
+        var y = prompt("Please provide number of Columns");
+        makeGrid(x,y)
+
+    }
+
+
+    
+
 })
